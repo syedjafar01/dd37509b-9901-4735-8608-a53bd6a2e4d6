@@ -1,0 +1,52 @@
+bundle_name: HelloJarvis
+description: null
+version: 0.0.1
+image: null
+libraries: null
+system_dependencies: null
+environment: null
+commands: null
+blocks:
+- name: hello_jarvis
+  file_name: hello_jarvis
+  class_name: HelloJarvis
+  label: hello_jarvis
+  description: ''
+  tags: []
+  libraries: []
+  executors:
+    name: ContainerExecutor
+    resource_requirements:
+      cores: 1
+      memory: 1024
+      gpu: 0
+      gpu_is_optional: false
+      clusterConfiguration: {}
+  listOfExecutors: []
+  inputs:
+  - name: message
+    dataFlowType: atomic
+    dataType: string
+    render_type: null
+    default: Deploy Mark42
+    doc: null
+    label: null
+  outputs:
+  - name: out_message
+    dataFlowType: atomic
+    dataType: string
+    doc: null
+    label: null
+    transport:
+      is_series:
+      - false
+      name: null
+      topic: null
+      sender_port: null
+      receiver_port: null
+      queue_size: 0
+      has_initialized: false
+  defaultExecutionMode: ProcessExecutor
+  source:
+    module_name: HelloJarvis
+category: Jarvis
